@@ -1,0 +1,148 @@
+﻿<html>
+<head>
+    <title>galeria</title>
+    <link rel="Stylesheet" type="text/css" href="css_stylesheet.css" />
+    <link rel="shortcut icon" href="icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script language="JavaScript">
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+</head>
+<body>
+    <p>Bartosz Filipowicz - Galeria</p>
+    <div class="row">
+        <table>
+            <tr>
+                <td>
+                    <div class="column">
+                        <img src="wyspy_galapagos_miniatura.jpg" style="width:250px;height:200px" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <img src="wyspy_kanary_miniatura.jpg" style="width:250px;height:200px" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <img src="wyspy_owcze_miniatura.jpg" style="width:250px;height:200px" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="column">
+                        <img src="wyspy_wezy_miniatura.jpg" style="width:250px;height:200px" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <img src="wyspy_wielkanocne_miniatura.jpg" style="width:250px;height:200px" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+                    </div>
+                </td>
+                <td>
+                    <div class="column">
+                        <img src="wyspy_ziel_przyl_miniatura.jpg" style="width:250px;height:200px" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="wyspy_galapagos.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="wyspy_kanary.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="wyspy_owcze.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="wyspy_wezy.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="wyspy_wielkanocne.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="wyspy_ziel_przyl.jpg" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="column">
+                <img class="demo cursor" src="wyspy_galapagos_miniatura.jpg" style="width:100%;padding:5px" onclick="currentSlide(1)" alt="Wyspy Galapagos">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="wyspy_kanary_miniatura.jpg" style="width:100%;padding:5px" onclick="currentSlide(2)" alt="Wyspy Kanaryjskie">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="wyspy_owcze_miniatura.jpg" style="width:100%;padding:5px" onclick="currentSlide(3)" alt="Wyspy Owcze">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="wyspy_wezy_miniatura.jpg" style="width:100%;padding:5px" onclick="currentSlide(4)" alt="Wyspy Węży">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="wyspy_wielkanocne_miniatura.jpg" style="width:100%;padding:5px" onclick="currentSlide(5)" alt="Wyspy Wielkanocne">
+            </div>
+            <div class="column">
+                <img class="demo cursor" src="wyspy_ziel_przyl_miniatura.jpg" style="width:100%;padding:5px" onclick="currentSlide(6)" alt="Wyspy Zielonego Przylądku">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
